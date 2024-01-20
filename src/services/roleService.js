@@ -1,13 +1,14 @@
 import http from './instance'
 import userRolesData from './user_roles.json'
 
-export function getUserRoles () {
+export function getRolesService () {
 
   return userRolesData;
-  /* const params = { searchText };
-  return http.get('/iu/courses/available', { params }).then(response => {
-    return response.data;
-  }).catch((e) => {
-    return handleHttpError(e);
-  }); */
+  //TODO: mock http
+}
+
+export function deleteRoleService () {
+
+  //TODO: mock http
+  return true;
 }

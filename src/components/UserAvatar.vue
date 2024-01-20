@@ -17,7 +17,6 @@ export default {
 
 <style lang="scss" scoped>
 .outer {
-  border-radius: 50%;
   img {
     border-radius: 50%;
   }
