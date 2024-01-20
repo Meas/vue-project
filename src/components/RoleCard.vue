@@ -15,7 +15,7 @@
     </div>
     <div class="mt-3 bg-secondary bottom d-flex flex-row-reverse p-3">
       <div v-if="item.editable">
-        <EditDeleteButtons @on-delete="onDelete" />
+        <EditDeleteButtons @on-delete="onDelete" @on-edit="onEdit" />
       </div>
       <div class="d-flex align-items-center h-100" v-else> LockIcon </div>
     </div>
@@ -40,6 +40,9 @@ export default {
   methods: {
     onDelete() {
       this.$emit('on-delete', this.item.id)
+    },
+    onEdit() {
+      this.$router.push({name: 'edit-role', params: { id: this.item.id }});
     }
   }
 }

@@ -1,4 +1,4 @@
-import { getRolesService, deleteRoleService } from "@/services/roleService";
+import { getRolesService, deleteRoleService, updateRoleService } from "@/services/roleService";
 
 const state = {
   data: []
@@ -23,6 +23,19 @@ const actions = {
     const response = await deleteRoleService(payload);
     //TODO: error handling
     const updatedList = state.data.filter(item => item.id !== Number(payload))
+
+    commit('setRoleData', updatedList);
+  },
+
+  async updateItem({ commit, state }, payload) {
+    const response = await updateRoleService(payload);
+    //TODO: error handling
+    const updatedList = state.data.map(item => {
+      if(item.id == payload.id) 
+        item = payload;
+      return item;
+    })
+    console.log('updatedList', updatedList);
 
     commit('setRoleData', updatedList);
   }

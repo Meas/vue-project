@@ -12,3 +12,9 @@ export function deleteRoleService () {
   //TODO: mock http
   return true;
 }
+
+export function updateRoleService () {
+
+  //TODO: mock http
+  return true;
+}

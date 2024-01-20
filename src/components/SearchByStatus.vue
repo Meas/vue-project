@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select class="form-select" aria-label="Default select example" @change="(e) => onChange(e.target.value)">
+    <select class="form-select" @change="(e) => onChange(e.target.value)">
       <option selected value="0">Active and Inactive</option>
       <option v-for="item in availableStatuses" :key="item.id" :value="item.id"> {{item.name}}</option>
     </select>
